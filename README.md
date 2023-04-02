@@ -41,7 +41,7 @@
 ## Escalabilidad 📊
 ***
 > Este proyecto puede ser escalado para agregar nuevas funcionalidades y para integrarse con otras aplicaciones de la tienda, como el sistema de facturación o el sistema de gestión de proveedores. ⬇⬇ 
-> * Además, la implementación de una interfaz gráfica de usuario puede hacer que la aplicación sea más fácil de usar para los empleados de la tienda.
+> * Además, la implementación de una interfaz gráfica de usuario podría hacer que la aplicación sea más fácil de usar para los empleados de la tienda.
 
 # Ejecutación 📬
 
