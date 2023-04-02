@@ -1,0 +1,27 @@
+ERROR:root:1054 (42S22): Unknown column 'fecha_creado' in 'field list'
+ERROR:root:2055: Cursor is not connected
+ERROR:root:1305 (42000): PROCEDURE stock_xgange.insert_val does not exist
+ERROR:root:1318 (42000): Incorrect number of arguments for PROCEDURE stock_xgange.insert_item; expected 4, got 3
+ERROR:root:1265 (01000): Data truncated for column 'iprice_item' at row 1
+ERROR:root:1318 (42000): Incorrect number of arguments for FUNCTION stock_xgange.get_perms; expected 1, got 0
+ERROR:root:1146 (42S02): Table 'stock_xgange.username' doesn't exist
+ERROR:root:[(None,)]
+ERROR:root:[(None,)]
+ERROR:root:[(None,)], None
+ERROR:root:[(None,)], None
+ERROR:root:[('1',)], edson
+ERROR:root:1, edson
+ERROR:root:2, edson
+ERROR:root:2, edson
+ERROR:root:1054 (42S22): Unknown column 'iabev' in 'field list'
+ERROR:root:2, edson
+ERROR:root:1054 (42S22): Unknown column 'iabev' in 'field list'
+ERROR:root:2, edson
+ERROR:root:2, edson
+ERROR:root:1054 (42S22): Unknown column 'iabev' in 'field list'
+ERROR:root:2, edson
+ERROR:root:2, EDSON
+ERROR:root:2, EDSON
+ERROR:root:2, edson
+ERROR:root:2, edson
+ERROR:root:2, edson
