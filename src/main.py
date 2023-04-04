@@ -2,6 +2,7 @@ from conn import Database
 from mysql.connector import Error
 from datetime import datetime
 from utils import ginp
+import getpass
 import config
 import os
 import socket
@@ -18,7 +19,7 @@ class Main:
         try:
             while self._logged == False:
                 usn = ginp(str, "Ingresa un nombre")
-                psw = ginp(str, "Ingresa tu contraseña")
+                psw = getpass.getpass("Ingresa tu contraseña para hacer login (secreta): ")
                 
                 if (usn == "quit") or (psw == 'quit'):
                     os.system('cls')
@@ -51,7 +52,7 @@ class Main:
         try:
             while self._logged == False:
                 usn = ginp(str, "Ingresa un nombre para registrar")
-                psw = ginp(str, "Ingresa tu contraseña para registrar")
+                psw = getpass.getpass("Ingresa una contraseña para registrar (secreta): ")
                 dtn = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 
                 if (usn == "quit") or (psw == 'quit'):
