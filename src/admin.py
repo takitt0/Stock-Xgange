@@ -94,7 +94,6 @@ class Main:
             conn.close_conn()
             sys.exit()
     
-
 def main(conn, name):
     logging.basicConfig(filename=config.log_normal, encoding="utf-8", level=logging.DEBUG)
     mainf = Main()
@@ -111,7 +110,7 @@ def main(conn, name):
             case config.delete_case:
                 os.system('cls')
                 mainf.delete_item(conn, perms)
-                
+
             case config.info_case:
                 os.system('cls')
                 print("WIP")
@@ -119,3 +118,7 @@ def main(conn, name):
             case config.exit_case:
                 os.system('cls')
                 sys.exit()
+
+            case _:
+                os.system('cls')
+                print("Ingresa una opción valida")
