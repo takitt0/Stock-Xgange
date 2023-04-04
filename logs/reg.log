@@ -25,3 +25,5 @@ ERROR:root:2, EDSON
 ERROR:root:2, edson
 ERROR:root:2, edson
 ERROR:root:2, edson
+ERROR:root:1265 (01000): Data truncated for column 'istock' at row 1
+ERROR:root:2055: Cursor is not connected

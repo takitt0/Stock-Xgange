@@ -9,7 +9,10 @@ config = dict(
 )
 max_user_len = 100
 max_pwd_len = 250
+max_abrev_len = 5
 
+#Perms
+insert_and_delete_perm = 2
 # Dirs
 log_normal = r"C:\Users\Acer\PycharmProjects\stock_xgange\logs\reg.log"
 log_sql = r"C:\Users\Acer\PycharmProjects\stock_xgange\logs\regsql.log"
