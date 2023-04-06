@@ -94,12 +94,11 @@ class Main:
             conn.close_conn()
             sys.exit()
     
-    def acc_info(self, conn, nombre, perms, c_date):
+    def acc_info(self, conn, nombre, perms):
         try:
             self.msg = f'''
                 Nombre = {nombre},
-                Permisos = {perms},
-                Fecha Creada = {c_date}
+                Permisos = {perms}
             '''
 
             print(self.msg)
@@ -129,7 +128,7 @@ def main(conn, name, c_date):
 
             case config.info_case:
                 os.system('cls')
-                mainf.acc_info(conn, name, perms, c_date)
+                mainf.acc_info(conn, name, perms)
 
             case config.exit_case:
                 os.system('cls')
