@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 # created by virtualenv automatically
 
-logs/
+logs/*
 .idea/
 venv/
 src/__pycache__

@@ -24,10 +24,13 @@ class Database():
             print(f"Error: {e}")
             self.close_conn()
 
-    def execute_read(self, query):
+    def execute(self, query, commit=False):
         try:
             self.res = self.cursor.execute(query)
 
+            if commit: 
+                self.conn.commit()
+                
             return self.cursor.fetchall()
         
         except Error as e:
@@ -40,9 +43,9 @@ class Database():
             if args:
                 args = tuple(map(lambda x : f"'{x}'", args))
                 query = f"SELECT {func}({', '.join(args)})"
-                self.res = self.execute_read(query)
+                self.res = self.execute(query)
             else:
-                self.res = self.execute_read(f"SELECT {func}()")
+                self.res = self.execute(f"SELECT {func}()")
 
             self.conn.commit()
             return self.res

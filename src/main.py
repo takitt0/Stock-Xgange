@@ -14,12 +14,14 @@ class Main:
     def __init__(self):
         self._logged = False
         self._username = None
+        self._date = None
 
     def login(self):
         try:
             while self._logged == False:
                 usn = ginp(str, "Ingresa un nombre")
                 psw = getpass.getpass("Ingresa tu contraseña para hacer login (secreta): ")
+                self._date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 
                 if (usn == "quit") or (psw == 'quit'):
                     os.system('cls')
@@ -31,6 +33,7 @@ class Main:
 
                     self._username = usn
                     self._logged = True
+                    
                 else:
                     os.system('cls')
                     print("Incorrect")
@@ -44,6 +47,7 @@ class Main:
             sys.exit()
 
         except Exception as e:
+            logging.error(e)
             print(f"Ocurrio un error interno, reinicia el programa: {e}")
             conn.close_conn()
             sys.exit()
@@ -53,8 +57,8 @@ class Main:
             while self._logged == False:
                 usn = ginp(str, "Ingresa un nombre para registrar")
                 psw = getpass.getpass("Ingresa una contraseña para registrar (secreta): ")
-                dtn = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                
+                self._date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
                 if (usn == "quit") or (psw == 'quit'):
                     os.system('cls')
                     break
@@ -91,7 +95,7 @@ class Main:
                     print("Tienes caracteres no validos.")
                     continue
 
-                conn.callpr("insert_acc", (usn, psw, ip_ad, 1, dtn))
+                conn.callpr("insert_acc", (usn, psw, ip_ad, 1, self._date))
                 os.system('cls')
 
                 return self
@@ -145,6 +149,6 @@ if __name__ == '__main__':
     # print(conn.callfc("check_usn", ("Juanifdto",))[0])
     # print(conn.callpr("insert_val", ("Pera 2", 3000, 12)))
     #print("test")
-    admin.main(conn, mainf._username)
+    admin.main(conn, mainf._username, mainf._date)
     print("Mostrar panel de admin")
     conn.close_conn()

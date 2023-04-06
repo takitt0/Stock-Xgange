@@ -1,5 +1,7 @@
 # __Stock-XGANE__
 
+![](imgs/Logo-Xgange.png)
+
 > Mi proyecto personal de un sistema de inventario. Hecho el **02-04-2023**
 
 ## Stack técnico 🔨

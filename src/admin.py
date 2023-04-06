@@ -94,7 +94,23 @@ class Main:
             conn.close_conn()
             sys.exit()
     
-def main(conn, name):
+    def acc_info(self, conn, nombre, perms, c_date):
+        try:
+            self.msg = f'''
+                Nombre = {nombre},
+                Permisos = {perms},
+                Fecha Creada = {c_date}
+            '''
+
+            print(self.msg)
+
+            return self
+        except Exception as e:
+            print(f"Ocurrio un error interno, reinicia el programa: {e}")
+            conn.close_conn()
+            sys.exit()
+
+def main(conn, name, c_date):
     logging.basicConfig(filename=config.log_normal, encoding="utf-8", level=logging.DEBUG)
     mainf = Main()
     perms = int(conn.callfc("get_perms", (name, ))[0][0])
@@ -113,7 +129,7 @@ def main(conn, name):
 
             case config.info_case:
                 os.system('cls')
-                print("WIP")
+                mainf.acc_info(conn, name, perms, c_date)
 
             case config.exit_case:
                 os.system('cls')

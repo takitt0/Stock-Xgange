@@ -23,6 +23,13 @@ register_case = "2"
 manual_case = "3"
 exit_case = "4"
 
+# Query case
+insert_q_case = "1"
+delete_q_case = "2"
+sum_q_case = "3"
+rest_q_case = "4"
+exit_q_case = "5"
+
 # Admin cases
 insert_case = "1"
 delete_case = "2"
