@@ -18,12 +18,13 @@ class Main:
                 self.unit = ginp(str, "Ingresa la unidad de medida (p.e 200 gr.)")
                 self.stock = ginp(None, "Ingresa el numero de stock (n. de unidades) actual")
                 self.price = ginp(None, "Ingresa el precio por unidad")
+                self.bar_code = ginp(int, "Ingresa el código de barras")
                 self.date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 
                 if self.abreviacion == " " or self.abreviacion == "":
                     self.abreviacion = abreviation(self.name)
-
-                self.data = (self.name, self.price, self.stock, self.unit, self.abreviacion, user_request, self.date)
+                
+                self.data = (self.name, self.price, self.stock, self.unit, self.abreviacion, user_request, self.date, self.bar_code)
                 
                 if any([choice == "quit" or choice == 0 for choice in self.data]):
                     os.system('cls')
@@ -43,7 +44,6 @@ class Main:
                     os.system('cls')
                     print("No puedes poner caracteres invalidos (en el manual están)")
                     continue
-                
 
                 conn.callpr("insert_item", self.data)
                 os.system('cls')
